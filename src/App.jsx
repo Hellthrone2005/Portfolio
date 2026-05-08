@@ -15,12 +15,14 @@ function App() {
   }, []);
 
   return (
-    <main className="relative min-h-screen bg-black">
-      {/* Interactive Purple Spotlight Overlay */}
-      <div className="spotlight-overlay" />
+    /* Ensure the main container is the base */
+    <main className="relative min-h-screen bg-black overflow-x-hidden">
+      
+      {/* 1. Background Layer (Spotlight) - Set to z-0 */}
+      <div className="spotlight-overlay" style={{ zIndex: 0 }} />
 
-      {/* Content Layer */}
-      <div className="relative z-10">
+      {/* 2. Content Layer - Forced to z-20 to be on top of the spotlight */}
+      <div className="relative z-20">
         <Hero />
         <Projects />
         <Experience />
