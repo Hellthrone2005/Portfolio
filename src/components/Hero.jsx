@@ -23,7 +23,7 @@ export default function Hero() {
         <div className="flex flex-wrap justify-center gap-4">
           {[
             { icon: <ShieldCheck size={18} />, text: "eJPT ID: 164406011" },
-            { icon: <GraduationCap size={18} />, text: "B.Tech CSE (6th Sem) - 6.5 GPA" },
+            { icon: <GraduationCap size={18} />, text: "B.Tech CSE (Iot, Cybersecurity and Blockchain Technology)" },
             { icon: <MapPin size={18} />, text: "New Delhi, India" }
           ].map((badge, i) => (
             <div key={i} className="flex items-center gap-2 px-5 py-2 bg-zinc-900/50 border border-zinc-800 rounded-full text-sm font-medium hover:border-purple-500/50 transition-colors">
