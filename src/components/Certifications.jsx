@@ -1,4 +1,4 @@
-import { Award, CheckCircle, Clock } from 'lucide-react';
+import { Award, CheckCircle, Clock, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Certifications() {
@@ -7,33 +7,39 @@ export default function Certifications() {
       name: "eJPT (Junior Penetration Tester)", 
       issuer: "INE / eLearnSecurity",
       id: "164406011", 
-      status: "Verified" 
+      status: "Verified",
+      link: "https://certs.ine.com/29078a60-d0bc-466a-a615-7d702f3795ca#acc.9LVxSsaI"
     },
     { 
-      name: "Palo Alto PCCET", 
+      name: "Certified Cybersecurity Practitioner", 
       issuer: "Palo Alto Networks",
       id: "LP-P0WPX1", 
-      status: "Verified" 
+      status: "Verified",
+      link: "https://learn.paloaltonetworks.com/learn/learning-plans/339/palo-alto-networks-certified-cybersecurity-practitioner"
     },
     { 
       name: "IBM Cybersecurity Fundamentals", 
       issuer: "IBM",
-      status: "Verified" 
+      status: "Verified",
+      link: "https://www.credly.com/badges/09297216-b100-4e01-a81f-0da6b14ffe1c/linked_in_profile" 
     },
     { 
       name: "Cisco Networking Basics", 
       issuer: "Cisco Networking Academy",
-      status: "Verified" 
+      status: "Verified",
+      link: "https://www.credly.com/badges/ad4aa024-2bfc-4ca7-bf91-02b47b91a82c/linked_in_profile" 
     },
     { 
       name: "Introduction to Cybersecurity", 
       issuer: "Cisco Networking Academy",
-      status: "Verified" 
+      status: "Verified",
+      link: "https://www.credly.com/badges/ade56526-e7ca-4e96-a51c-02f39b4033b3/linked_in_profile" 
     },
     { 
-      name: "eCPPT (Certified Professional Penetration Tester)", 
+      name: "eCPPT (Professional Penetration Tester)", 
       issuer: "INE / eLearnSecurity",
-      status: "Pursuing" 
+      status: "Pursuing",
+      link: "https://ine.com/learning/paths/elearnsecurity-certified-professional-penetration-tester" 
     }
   ];
 
@@ -47,14 +53,21 @@ export default function Certifications() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certs.map((cert, i) => (
-            <motion.div 
-              key={i} 
+            <motion.a
+              key={i}
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="p-6 bg-zinc-900/30 border border-zinc-800 rounded-2xl hover:border-purple-500/50 transition-all group"
+              className="p-6 bg-zinc-900/30 border border-zinc-800 rounded-2xl hover:border-purple-500/50 hover:bg-zinc-900/50 transition-all group relative block"
             >
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-purple-400">
+                <ExternalLink size={14} />
+              </div>
+
               <div className="flex justify-between items-start mb-4">
                 {cert.status === "Verified" ? (
                   <CheckCircle size={24} className="text-purple-500" />
@@ -70,7 +83,7 @@ export default function Certifications() {
                 </span>
               </div>
               
-              <h3 className="font-bold text-slate-100 group-hover:text-purple-400 transition-colors">
+              <h3 className="font-bold text-slate-100 group-hover:text-purple-400 transition-colors pr-6">
                 {cert.name}
               </h3>
               <p className="text-xs text-zinc-500 mt-1">{cert.issuer}</p>
@@ -81,7 +94,7 @@ export default function Certifications() {
                   <p className="text-xs text-purple-300/80 font-mono mt-1">{cert.id}</p>
                 </div>
               )}
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
