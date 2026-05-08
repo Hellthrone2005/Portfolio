@@ -7,6 +7,7 @@ import Certifications from './components/Certifications';
 function App() {
   useEffect(() => {
     const handleMouseMove = (e) => {
+      // Use clientX/Y for fixed positioning
       document.documentElement.style.setProperty('--x', `${e.clientX}px`);
       document.documentElement.style.setProperty('--y', `${e.clientY}px`);
     };
@@ -15,19 +16,17 @@ function App() {
   }, []);
 
   return (
-    /* Ensure the main container is the base */
     <main className="relative min-h-screen bg-black overflow-x-hidden">
-      
-      {/* 1. Background Layer (Spotlight) - Set to z-0 */}
-      <div className="spotlight-overlay" style={{ zIndex: 0 }} />
-
-      {/* 2. Content Layer - Forced to z-20 to be on top of the spotlight */}
-      <div className="relative z-20">
+      {/* 1. Content Layer */}
+      <div className="relative z-10">
         <Hero />
         <Projects />
         <Experience />
         <Certifications />
       </div>
+
+      {/* 2. Spotlight Layer (Moved to top with pointer-events: none) */}
+      <div className="spotlight-overlay" />
     </main>
   );
 }
