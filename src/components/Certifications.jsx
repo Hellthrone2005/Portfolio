@@ -36,10 +36,10 @@ export default function Certifications() {
       link: "https://www.credly.com/badges/ade56526-e7ca-4e96-a51c-02f39b4033b3/linked_in_profile" 
     },
     { 
-      name: "eCPPT (Professional Penetration Tester)", 
-      issuer: "INE / eLearnSecurity",
+      name: "CompTIA Security+", 
+      issuer: "CompTIA",
       status: "Pursuing",
-      link: "https://ine.com/learning/paths/elearnsecurity-certified-professional-penetration-tester" 
+      link: "https://www.comptia.org/certifications/security" 
     }
   ];
 
@@ -62,7 +62,7 @@ export default function Certifications() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="p-6 bg-zinc-900/30 border border-zinc-800 rounded-2xl hover:border-purple-500/50 hover:bg-zinc-900/50 transition-all group relative block"
+              className="p-6 bg-zinc-900/30 border border-zinc-800 rounded-2xl hover:border-purple-500/50 hover:bg-zinc-900/50 transition-all group relative block cursor-pointer z-30"
             >
               <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-purple-400">
                 <ExternalLink size={14} />
