@@ -1,4 +1,4 @@
-import { Briefcase, Calendar, MapPin, ShieldAlert, Code2, ShieldCheck, FileCheck } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, ShieldCheck, Code2, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Experience() {
@@ -14,6 +14,18 @@ export default function Experience() {
         "Utilized industry-standard digital forensics suites including Cellebrite and Oxygen Forensics to extract and analyze host device data artifacts.",
         "Conducted mobile device vulnerability assessments and parsed system infrastructure logs to map indicator pathways for investigations.",
         "Maintained strict chain of custody protocols and absolute confidentiality baselines required in law enforcement environments."
+      ]
+    },
+    {
+      role: "Red Team Expert",
+      company: "Cyber Sapiens (College Cybersecurity Club)",
+      location: "Gurugram, India",
+      duration: "2024 -- Present",
+      icon: <Users className="text-fuchsia-500" size={20} />,
+      points: [
+        "Supervised and engineered infrastructure deployment for club-wide Capture The Flag (CTF) competitions.",
+        "Designed real-world offensive and defensive enterprise network scenarios to train over 50+ student members.",
+        "Conducted internal vulnerability assessments and security infrastructure audits across local staging environments."
       ]
     },
     {
