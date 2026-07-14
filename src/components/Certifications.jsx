@@ -4,6 +4,13 @@ import { motion } from 'framer-motion';
 export default function Certifications() {
   const certs = [
     { 
+      name: "Google Cybersecurity Professional Certificate", 
+      issuer: "Google via Coursera",
+      id: "KQKY0YIL50NZ", 
+      status: "Verified",
+      link: "https://coursera.org/verify/professional-cert/KQKY0YIL50NZ"
+    },
+    { 
       name: "eJPT (Junior Penetration Tester)", 
       issuer: "INE / eLearnSecurity",
       id: "164406011", 
